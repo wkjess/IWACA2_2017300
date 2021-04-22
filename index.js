@@ -17,8 +17,8 @@ app.get('/hello/:foo/:bar', (req, res) => {
     ]})
 });
 
-app.post('hello', (req, res) => {
-    res.json({result: 'Post sent'});
+app.post('/hello', (req, res) => {
+    res.json({result: 'Post sent', data: req.body});
 })
 
 //create a server object:
