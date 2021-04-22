@@ -1,0 +1,25 @@
+{
+  "name": "iwaca2_2017300",
+  "version": "1.0.0",
+  "description": "IWACA2_2017300",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wkjess/IWACA2_2017300.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wkjess/IWACA2_2017300/issues"
+  },
+  "homepage": "https://github.com/wkjess/IWACA2_2017300#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "nodemon": "^2.0.7"
+  }
+}
