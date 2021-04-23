@@ -1,12 +1,13 @@
 const express = require('express'),
-router = express.Router(),
-cors = require('cors');
+router = express.Router();
 
-var music = require ('../music-controller');
+var musicCtrl = require('./music-controller');
 
-router.all('*', cors())
+//router.all('*', cors())
 
 //CRUD function
-router.post('/createMusic', music.createMusic); //create music
+router.get('/music', musicCtrl.getMusic); // Get all music from DB
+router.post('/music', musicCtrl.postMusic); // Create music
+
 
 module.exports = router;

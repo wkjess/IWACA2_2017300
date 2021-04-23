@@ -24,18 +24,6 @@ app.post('/music', (req, res) => {
     res.json({result: 'Post sent', data: req.body});
 });
 
-let users = [];
-(async function getNames() {
-try {
-const { data } = await axios.get(
-"https://jsonplaceholder.typicode.com/users"
-);
-users = data.map(user => user.name);
-} catch (error) {
-console.log(error);
-}
-})();
-
 app.listen(port, function(err) {
     console.log('Server listening to port: ' + port);
 });
