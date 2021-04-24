@@ -21,6 +21,10 @@ app.get('/music/:foo/:bar', (req, res) => {
     ]})
 });
 
+app.listen(port, function(err) {
+    console.log('Listening port: ' + port);
+});
+
 const dbURI = 'mongodb://localhost/test';
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
