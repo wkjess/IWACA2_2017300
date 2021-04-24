@@ -1,7 +1,7 @@
 const express = require('express'),
 router = express.Router();
 
-var musicCtrl = require('./music-controller');
+const Music = require('../models/music');
 
 //router.all('*', cors())
 
