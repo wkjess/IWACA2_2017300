@@ -3,11 +3,39 @@ router = express.Router();
 
 const Music = require('../models/music');
 
-//router.all('*', cors())
+router.get('/', async (req, res) => {
+    const music = await Music.find();
+    
+    res.render('index', {
+        Music
+    });
+});
 
-//CRUD function
-router.get('/music', musicCtrl.getMusic); // Get all music from DB
-router.post('/music', musicCtrl.postMusic); // Create music
+router.post('/add', (req, res) => {
+    const music = new Music(req.body);
+    music.save();
+    res.redirent('/');
+});
+
+router.get('/edit/:id', async (req,res) => {
+    const { id } = req.params;
+    const music = await Music.findById(id);
+    res.render('edit', {
+        music
+    });
+});
+
+router.post('/edit/:id', async (rea, res) => {
+    const { id } = req.params;
+    await Music.update ({ _id: id }, req. body);
+    res.redirect('/');
+});
+
+router.get('/delete/:id', async (req, res) => {
+    const { id } = req.params;
+    await Music.remove({_id: id });
+    res.redirect('/');
+});
 
 
 module.exports = router;
